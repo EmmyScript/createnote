@@ -1,14 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { NewNote } from "./components/NewNote";
-import Home from "./components/Home";
+
 import { useLocalStorage } from "./components/UseLocalStorage";
 import { useMemo } from "react";
 import { v4 as uuidV4 } from "uuid";
-import { Container } from "react-bootstrap";
+import { Container, } from "react-bootstrap";
 import NoteList from "./components/NoteList";
 import { NoteLayout } from "./components/NoteLayout";
 import { Note } from "./components/Note";
 import { EditNote } from "./components/EditNote";
+import Navbar from "./components/Navbar";
 
 export type Note = {
   id: string;
@@ -36,7 +37,8 @@ export type Tag = {
 };
 export const App = () => {
   const [notes, setNotes] = useLocalStorage<RawNote[]>("NOTES", []);
-  const [tags, setTags] = useLocalStorage<Tag[]>("TAGS", []);
+  
+  const [tags,   setTags] = useLocalStorage<Tag[]>("TAGS", []);
 
   const notesWithTags = useMemo(() => {
     return notes.map((note) => {
@@ -82,18 +84,44 @@ export const App = () => {
   }
 
   function addTag(tag: Tag) {
-    setTags((prev) => [...prev, tag]);
+    setTags((prev: any) => [...prev, tag]);  
+  } 
+
+  
+  function updateTag(id: string, label: string){
+
+setTags(prevTags => {
+  return prevTags.map(tag => {
+
+    if(tag.id ===id){
+      return{...tag, label}
+    }else{
+      return tag
+    }
+  })
+})
   }
+
+function deleteTag(id: string){
+  setTags(prevTags => {
+    return prevTags.filter(tag => tag.id !== id) 
+  })
+
+}
 
   
 
 
   return (
-    <Container className="  my-4  ">
+    <Container className="bg-red">
+
+      <Navbar/>
       <Routes>
+        
         <Route
           path="/"
-          element={<NoteList availableTags={tags} notes={notesWithTags} />}
+          element={<NoteList  notes={notesWithTags}  availableTags={tags}  onUpdateTag={updateTag} onDeleteTag={deleteTag}/>}
+        
         />
         <Route
           path="/new"
@@ -114,10 +142,13 @@ export const App = () => {
           availableTags={tags}
           />} />
         </Route>
-        <Route path="." element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Container>
   );
 };
 
 export default App;
+
+
+

@@ -48,7 +48,7 @@ export const NoteForm = ({
               <Form.Control ref={titleRef} required  defaultValue={title}/>
             </Form.Group>
           </Col>
-          <Col>
+          <Col>  
             <Form.Group controlId="tags">
               <Form.Label>Tags</Form.Label>
               <CreatableReactSelect
