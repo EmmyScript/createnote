@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-export function useLocalStorage<T>(key: string ,
+export function useLocalStorage<T>(key: string , 
     initialValue: T | (() => T)){
         const[value, setValue] = useState<T>(() => {
            const jsonValue = localStorage.getItem(key)
@@ -12,7 +12,7 @@ export function useLocalStorage<T>(key: string ,
                 return initialValue
             }
         }else {
-            return JSON.parse(jsonValue)
+            return JSON.parse(jsonValue) 
         }
         
         })
@@ -22,4 +22,4 @@ export function useLocalStorage<T>(key: string ,
         }, [value, key])
 
         return [value, setValue] as [ T, typeof setValue] 
-    }
+    }   

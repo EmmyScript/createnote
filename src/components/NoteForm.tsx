@@ -82,7 +82,7 @@ export const NoteForm = ({
           <Form.Label>body</Form.Label>
           <Form.Control ref={markdownRef} defaultValue={markdown} required as="textarea" rows={15} />
         </Form.Group>
-        <Stack direction="horizontal">
+        <Stack  gap={2} direction="horizontal">
           <Button type="submit" variant="outline-primary">
             save
           </Button>
