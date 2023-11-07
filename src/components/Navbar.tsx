@@ -15,7 +15,7 @@ const Navbar = () => {
           <a className="nav-link text-center" aria-current="page" href="#">Notes Taking App</a>
         </li>
        
-        <li className="nav-item dropdown">
+        <li className=" dropd nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             About 
           </a>

@@ -12,7 +12,8 @@ import {
 import { Link } from "react-router-dom";
 import ReactSelect from "react-select";
 import { Tag } from "../App";
-import DateTime from "./DateTime";
+
+import DateNav from "./DateNav";
 //import {FaBank} from "react-icons/fa"
 
 type EditTagsModalProps = {
@@ -144,9 +145,9 @@ function NoteCard({ id, title, tags }: SimplefiedNote) {
           gap={2}
           className="align-item-center justify-content-center h-100"
         >
-          <DateTime/>
+          <DateNav/>
 
-          
+
           <span className="fs-5">{title}</span>
           {tags.length > 0 && (
             <Stack

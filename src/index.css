@@ -26,6 +26,12 @@
     
 }
 
+.dropd{
+    background-color: darkgrey;
+    color: black;
+    overflow-wrap: break-word;
+   
+}
 
 .edith{
     background-color: black;
