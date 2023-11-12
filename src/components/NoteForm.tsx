@@ -34,7 +34,8 @@ export const NoteForm = ({
     onSubmit({
       title: titleRef.current!.value,
       markdown: markdownRef.current!.value,
-      tags: selectedTags
+      tags: selectedTags,
+      createdAt:new Date()
     });
      navigate ("..")
   };
@@ -78,9 +79,11 @@ export const NoteForm = ({
             </Form.Group>
           </Col>
         </Row>
-        <Form.Group controlId="markdown">
-          <Form.Label>body</Form.Label>
-          <Form.Control ref={markdownRef} defaultValue={markdown} required as="textarea" rows={15} />
+        <Form.Group controlId="markdown" className="textbody">
+          <h3>Body</h3>
+          
+          <Form.Control ref={markdownRef} defaultValue={markdown} 
+          required as = 'textarea' rows={5} placeholder="Enter text here..." />
         </Form.Group>
         <Stack  gap={2} direction="horizontal">
           <Button type="submit" variant="outline-primary">

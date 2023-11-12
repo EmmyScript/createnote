@@ -1,21 +1,13 @@
-import { useState , useEffect} from "react"
 
 
-const DateNav = () => {
-    const[date, setDate] = useState(new  Date())
 
-     useEffect (() =>{
+const DateNav = ({createdAt}:any) => {
 
-        const timer = setInterval(() =>setDate(new Date()), 1000)
-        return function cleanup(){
-            return
-            clearInterval(timer)
-        }
-    })
+
   return (
 
     <div>
-        <p>Time:{date.toLocaleTimeString()}</p>
+        <p>Date:{createdAt.toLocaleDateString()}</p>
     </div>
   )
 }

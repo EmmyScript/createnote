@@ -14,7 +14,7 @@ import ReactSelect from "react-select";
 import { Tag } from "../App";
 
 import DateNav from "./DateNav";
-//import {FaBank} from "react-icons/fa"
+
 
 type EditTagsModalProps = {
   show: boolean;
@@ -28,6 +28,7 @@ type SimplefiedNote = {
   tags: Tag[];
   title: string;
   id: string;
+  createdAt:any
 };
 type NoteListProps = {
   availableTags: Tag[];
@@ -122,7 +123,8 @@ export const NoteList = ({
       <Row xs={2} lg={3} xl={4} className="g-3">
         {filteredNotes.map((note) => (
           <Col key={note.id}>
-            <NoteCard id={note.id} title={note.title} tags={note.tags} />
+            <NoteCard id={note.id} title={note.title} tags={note.tags}
+            createdAt = {note.createdAt} />
           </Col>
         ))}
       </Row>
@@ -137,7 +139,7 @@ export const NoteList = ({
   );
 };
 
-function NoteCard({ id, title, tags }: SimplefiedNote) {
+function NoteCard({ id, title, tags,createdAt }: SimplefiedNote) {
   return (
     <Card as={Link} to={`/${id}`} className="card test-reset v-100">
       <Card.Body>
@@ -145,7 +147,7 @@ function NoteCard({ id, title, tags }: SimplefiedNote) {
           gap={2}
           className="align-item-center justify-content-center h-100"
         >
-          <DateNav/>
+          <DateNav createdAt={createdAt}/>
 
 
           <span className="fs-5">{title}</span>
@@ -163,6 +165,7 @@ function NoteCard({ id, title, tags }: SimplefiedNote) {
             </Stack>
           )}
         </Stack>
+        
       </Card.Body>
     </Card>
   );

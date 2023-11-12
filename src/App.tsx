@@ -9,7 +9,7 @@ import NoteList from "./components/NoteList";
 import { NoteLayout } from "./components/NoteLayout";
 import { EditNote } from "./components/EditNote";
 import Navbar from "./components/Navbar";
-import DateTime from "./components/DateTime";
+
 
 export type Note = {
   id: string;
@@ -23,12 +23,14 @@ export type RawNoteData = {
   title: string;
   markdown: string;
   tagIds: string[];
+  createdAt:any
 };
 
 export type NoteData = {
   title: string;
   markdown: string;
   tags: Tag[];
+  createdAt:any
 };
 export type Tag = {
   id: string;
@@ -75,7 +77,7 @@ export const App = () => {
       return prevNotes.filter((note) => note.id !== id);
     });
   }
-
+  
   function addTag(tag: Tag) {
     setTags((prev: any) => [...prev, tag]);
   }
@@ -101,7 +103,7 @@ export const App = () => {
   return (
     <Container className="">
       <Navbar />
-      <DateTime/>
+    
       <Routes>
         <Route
           path="/"

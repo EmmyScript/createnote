@@ -33,7 +33,7 @@ export function Note({ onDelete }: NoteProps) {
               <Button variant="outline-success">Edit</Button>
             </Link>
             <Button
-              onClick={() => {
+              onClick={() => { 
                 onDelete(note.id);
 
                 navigate("/");
