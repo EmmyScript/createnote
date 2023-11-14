@@ -1,12 +1,16 @@
 
+import  Moment  from 'moment';
+
 
 const DateNav = ({createdAt}:any) => {
+  
+
 
 
   return (
 <>
     <div>
-        <p>Date:{createdAt.toLocaleDateString()}</p>
+        <p>Date:{Moment(createdAt).format("YYYY:MM:DD hh:ss")}</p>
     </div>
     
     </>
