@@ -1,6 +1,8 @@
 import {FaUserGraduate} from "react-icons/fa"
-import trouser2 from "../images/trouser2.jpg"
 import quote2 from "../images/quote2.jpg"
+import b2 from "../images/b2.jpg"
+//import { Carousel } from "react-responsive-carousel";
+//import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 const Navbar = () => {
   return (
@@ -31,8 +33,8 @@ const Navbar = () => {
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={trouser2} className="d-block w-20" alt={trouser2} width={200} />
-      <h3>sup</h3>
+      <img src={b2} className="d-block w-20" alt={b2} width={100} />
+      <h3>EmmyTech</h3>
     </div>
     <div className="carousel-item">
       <img src={quote2} className="d-block w-20" alt={quote2}  width={200}/>

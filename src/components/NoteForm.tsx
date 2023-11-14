@@ -38,7 +38,7 @@ export const NoteForm = ({
       createdAt:new Date()
     });
      navigate ("..")
-  };
+  }; 
   return (
     <Form onSubmit={handleSubmit}>
       <Stack gap={4}>

@@ -30,7 +30,7 @@ export function Note({ onDelete }: NoteProps) {
         <Col xs="auto">
           <Stack gap={2} direction="horizontal">
             <Link to={`/${note.id}/edit`}>
-              <Button variant="outline-success">Edit</Button>
+              <Button variant="outline-success" >Edit</Button>
             </Link>
             <Button
               onClick={() => { 
