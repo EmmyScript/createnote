@@ -10,7 +10,7 @@ const DateNav = ({createdAt}:any) => {
   return (
 <>
     <div>
-        <p>Date:{Moment(createdAt).format("YYYY:MM:DD hh:ss")}</p>
+        <p className='time'>Date:{Moment(createdAt).format("DD:MM:YYYY hh:mm")}</p>
     </div>
     
     </>

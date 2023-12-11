@@ -11,7 +11,7 @@
     transition: translate ease-in-out 100ms, box-shadow
     ease-in-out 100ms;
     text-decoration: none;
-    background-color:floralwhite;
+    background-color:#faebd7;
     color:black;
     
    
@@ -20,7 +20,7 @@
 .card:hover,
 .card:focus {
     translate: 0-5px;
-    box-shadow: 0 5px  8px 0 rgba(0, 0,0, .2);
+    box-shadow: 0 5px  12px 0 rgba(35, 32, 32, 0.2);
     text-decoration:underline;
     text-transform: uppercase;
     
@@ -62,4 +62,9 @@ background-color: aquamarine;
     border-radius: 4px;
     outline: none;
 
+}
+
+.time{
+    background-color: white;
+    opacity: 20px;
 }

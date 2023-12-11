@@ -142,6 +142,7 @@ export const NoteList = ({
 function NoteCard({ id, title, tags,createdAt }: SimplefiedNote) {
   return (
     <Card as={Link} to={`/${id}`} className="card test-reset v-100">
+
       <Card.Body>
         <Stack
           gap={2}
@@ -164,6 +165,7 @@ function NoteCard({ id, title, tags,createdAt }: SimplefiedNote) {
               ))}
             </Stack>
           )}
+          
         </Stack>
         
       </Card.Body>
