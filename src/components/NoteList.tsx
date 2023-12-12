@@ -14,6 +14,7 @@ import ReactSelect from "react-select";
 import { Tag } from "../App";
 import { SlNote } from "react-icons/sl";
 import DateNav from "./DateNav";
+import Animation from "./Animation";
 
 
 type EditTagsModalProps = {
@@ -64,7 +65,7 @@ export const NoteList = ({
 
   return (
     <>
-      <Row className="align-items-center mb-4">
+      <Row className="align-items-center mb-4 ">
         <Col>
           <h1>Notes List </h1>
         </Col>
@@ -72,12 +73,12 @@ export const NoteList = ({
         <Col xs="auto">
           <Stack gap={2} direction="horizontal">
             <Link to="/new">
-              <Button variant="primary">Create Note</Button>
+              <Button variant="primary" >Create Note</Button>
               
             </Link>
             <Button
               onClick={() => setEditTagsModalIsOpen(true)}
-              variant="outline-secondary"
+              variant="outline-secondary" 
             >
               Edit Tags
             </Button>
@@ -128,6 +129,8 @@ export const NoteList = ({
               :<div className="  bg-danger text-white card">
                <div className="card-body p-5"> <h2>You have no note available.
                 <span><SlNote /></span></h2></div>
+
+                <Animation/>
               </div>
               }
 
@@ -160,12 +163,12 @@ export const NoteList = ({
 
 function NoteCard({ id, title, tags,createdAt }: SimplefiedNote) {
   return (
-    <Card as={Link} to={`/${id}`} className="card test-reset v-100">
+    <Card as={Link} to={`/${id}`} className="   card test-reset v-100">
 
       <Card.Body>
         <Stack
           gap={2}
-          className="align-item-center justify-content-center h-100"
+          className=" car align-item-center justify-content-center h-100"
         >
           <DateNav createdAt={createdAt}/>
 

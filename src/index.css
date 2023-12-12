@@ -11,8 +11,10 @@
     transition: translate ease-in-out 100ms, box-shadow
     ease-in-out 100ms;
     text-decoration: none;
-    background-color:#faebd7;
+    background-color:#faebd7 ;
     color:black;
+    border: 5px;
+    border-radius: 20px solid red;
     
    
 }
@@ -23,6 +25,7 @@
     box-shadow: 0 5px  12px 0 rgba(35, 32, 32, 0.2);
     text-decoration:underline;
     text-transform: uppercase;
+    
     
 }
 
@@ -75,6 +78,60 @@ background-color: aquamarine;
     text-transform: uppercase;
     color: red;
     font-size: 20px;
+
+
+}
+
+.car{
+    border: 50px;
+    border-radius: 50px solid red;
+}
+
+.scroll-container {
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
     
+  }
+  
+  .ani {
+    color: white;
+    font-size: 20px;
+    
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    padding-left: 5px;
+    
+    
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+  }
+  
+  /* for Firefox */
+  @-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+  }
+  
+  /* for Chrome */
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+  }
+  
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
 
 }

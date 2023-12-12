@@ -8,7 +8,7 @@ import b2 from "../images/b2.jpg"
 const Navbar = () => {
   return (
 
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
     <a className="navbar-brand  fs-20" href="#"><span> <FaUserGraduate/></span></a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
