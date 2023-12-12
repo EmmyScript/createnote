@@ -1,6 +1,7 @@
 import {FaUserGraduate} from "react-icons/fa"
 import quote2 from "../images/quote2.jpg"
 import b2 from "../images/b2.jpg"
+
 //import { Carousel } from "react-responsive-carousel";
 //import "react-responsive-carousel/lib/styles/carousel.min.css"
 
@@ -9,7 +10,7 @@ const Navbar = () => {
 
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Ido's<span><FaUserGraduate/></span></a>
+    <a className="navbar-brand  fs-20" href="#"><span> <FaUserGraduate/></span></a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -17,11 +18,11 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link text-center" aria-current="page" href="#"> Modern Notes Taking App</a>
+          <a className=" title nav-link text-center rounded-top-circle p-3 m-3"> Modern Notes Taking App </a>
         </li>
        
         <li className=" dropd nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="  text-dark p-2 nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             About 
           </a>
           <ul className="dropdown-menu">

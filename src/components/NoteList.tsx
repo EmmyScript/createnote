@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import ReactSelect from "react-select";
 import { Tag } from "../App";
-
+import { SlNote } from "react-icons/sl";
 import DateNav from "./DateNav";
 
 
@@ -72,7 +72,8 @@ export const NoteList = ({
         <Col xs="auto">
           <Stack gap={2} direction="horizontal">
             <Link to="/new">
-              <Button variant="primary">Create</Button>
+              <Button variant="primary">Create Note</Button>
+              
             </Link>
             <Button
               onClick={() => setEditTagsModalIsOpen(true)}
@@ -83,42 +84,58 @@ export const NoteList = ({
           </Stack>
         </Col>
       </Row>
-      <Form>
-        <Row className="mb-4">
-          <Col>
-            <Form.Group controlId="title">
-              <Form.Label>Title</Form.Label>
-              <Form.Control
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </Form.Group>
-          </Col>
+      
 
-          <Col>
-            <Form.Group controlId="tags">
-              <Form.Label>Tags</Form.Label>
-              <ReactSelect
-                value={selectedTags.map((tag) => {
-                  return { label: tag.label, id: tag.id, value: tag.value };
-                })}
-                options={availableTags.map((tag) => {
-                  return { label: tag.label, id: tag.id, value: tag.value };
-                })}
-                onChange={(tags) => {
-                  setSelectedTags(
-                    tags.map((tag) => {
+      <Form>
+        
+        <Row className="mb-4">
+          
+
+
+        {filteredNotes.length >0 ?
+          <><Col>
+              <Form.Group controlId="title">
+                <Form.Label>Title</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="search by title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)} />
+              </Form.Group>
+            </Col><Col>
+                <Form.Group controlId="tags">
+                  <Form.Label>Tags </Form.Label>
+                  <ReactSelect
+                    value={selectedTags.map((tag) => {
                       return { label: tag.label, id: tag.id, value: tag.value };
-                    })
-                  );
-                }}
-                isMulti
-              />
-            </Form.Group>
-          </Col>
+                    })}
+                    placeholder="Search by tags"
+                    options={availableTags.map((tag) => {
+                      return { label: tag.label, id: tag.id, value: tag.value };
+                    })}
+
+                    onChange={(tags) => {
+                      setSelectedTags(
+                        tags.map((tag) => {
+                          return { label: tag.label, id: tag.id, value: tag.value };
+                        })
+                      );
+                    } }
+                    isMulti />
+                </Form.Group>
+              </Col>
+              </>
+              :<div className="  bg-danger text-white card">
+               <div className="card-body p-5"> <h2>You have no note available.
+                <span><SlNote /></span></h2></div>
+              </div>
+              }
+
+          
+
         </Row>
       </Form>
+
 
       <Row xs={2} lg={3} xl={4} className="g-3">
         {filteredNotes.map((note) => (
@@ -128,6 +145,8 @@ export const NoteList = ({
           </Col>
         ))}
       </Row>
+
+
       <EditTagsModal
         onDeleteTag={onDeleteTag}
         onUpdateTag={onUpdateTag}

@@ -13,7 +13,8 @@ export const NewNote = ({onSubmit, onAddTag, availableTags}: NewNoteProps) => {
 
   return (
     <>
-    <h1 className="mb-4">NEW NOTE</h1>
+    <h1 className="mb-4">NEW NOTE </h1>
+    
     <NoteForm onSubmit={onSubmit} onAddTag = {onAddTag} availableTags = {availableTags}/>
     </>
   );

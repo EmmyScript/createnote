@@ -68,3 +68,13 @@ background-color: aquamarine;
     background-color: white;
     opacity: 20px;
 }
+
+.title{
+    background-color:bisque;
+    font-family: monospace;
+    text-transform: uppercase;
+    color: red;
+    font-size: 20px;
+    
+
+}
